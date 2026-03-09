@@ -15,10 +15,6 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText input1;
     private EditText input2;
-    private Button btnAdd;
-    private Button btnMinus;
-    private Button btnMul;
-    private Button btnDiv;
     private TextView txtResult;
 
     @Override
@@ -34,15 +30,16 @@ public class MainActivity extends AppCompatActivity {
 
         input1 = findViewById(R.id.inputFirstNumber);
         input2 = findViewById(R.id.inputSecondNumber);
-        btnAdd = findViewById(R.id.buttonAdd);
-        btnMinus = findViewById(R.id.buttonMinus);
-        btnMul = findViewById(R.id.buttonMul);
-        btnDiv = findViewById(R.id.buttonDiv);
         txtResult = findViewById(R.id.result);
+
+        Button btnAdd = findViewById(R.id.buttonAdd);
+        Button btnMinus = findViewById(R.id.buttonMinus);
+        Button btnMul = findViewById(R.id.buttonMul);
+        Button btnDiv = findViewById(R.id.buttonDiv);
 
         btnAdd.setOnClickListener(v -> {
             if (input1.getText().toString().isEmpty() || input2.getText().toString().isEmpty()) {
-                txtResult.setText("Please enter numbers");
+                txtResult.setText(R.string.error_empty_inputs);
             } else {
                 float num1 = Float.parseFloat(input1.getText().toString());
                 float num2 = Float.parseFloat(input2.getText().toString());
@@ -53,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnMinus.setOnClickListener(v -> {
             if (input1.getText().toString().isEmpty() || input2.getText().toString().isEmpty()) {
-                txtResult.setText("Please enter numbers");
+                txtResult.setText(R.string.error_empty_inputs);
             } else {
                 float num1 = Float.parseFloat(input1.getText().toString());
                 float num2 = Float.parseFloat(input2.getText().toString());
@@ -64,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnMul.setOnClickListener(v -> {
             if (input1.getText().toString().isEmpty() || input2.getText().toString().isEmpty()) {
-                txtResult.setText("Please enter numbers");
+                txtResult.setText(R.string.error_empty_inputs);
             } else {
                 float num1 = Float.parseFloat(input1.getText().toString());
                 float num2 = Float.parseFloat(input2.getText().toString());
@@ -77,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnDiv.setOnClickListener(v -> {
             if (input1.getText().toString().isEmpty() || input2.getText().toString().isEmpty()) {
-                txtResult.setText("Please enter numbers");
+                txtResult.setText(R.string.error_empty_inputs);
             } else {
                 float num1 = Float.parseFloat(input1.getText().toString());
                 float num2 = Float.parseFloat(input2.getText().toString());
@@ -85,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
                     float result = num1 / num2;
                     txtResult.setText(String.valueOf(result));
                 } else {
-                    txtResult.setText("Cannot divide by 0");
+                    txtResult.setText(R.string.error_divide_by_zero);
                 }
             }
         });

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">TheDemo</string>
+    <string name="hint_first_number">Enter first number</string>
+    <string name="hint_second_number">Enter second number</string>
+    <string name="op_add">+</string>
+    <string name="op_minus">-</string>
+    <string name="op_mul">*</string>
+    <string name="op_div">/</string>
+    <string name="result_placeholder">Result</string>
+    <string name="error_empty_inputs">Please enter numbers</string>
+    <string name="error_divide_by_zero">Cannot divide by 0</string>
 </resources>
